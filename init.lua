@@ -77,6 +77,7 @@ Kickstart Guide:
     for when you are first encountering a few different constructs in your nvim config.
 
 If you experience any errors while trying to install kickstart, run `:checkhealth` for more info
+--]]
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -140,6 +141,9 @@ vim.opt.inccommand = 'split'
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 
+-- Use block cursor in insert mode
+vim.opt.guicursor = ''
+
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
@@ -149,6 +153,10 @@ vim.opt.scrolloff = 10
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Vertical motion keymaps
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Half page [D]own and center' })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Half page [U]p and center' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
