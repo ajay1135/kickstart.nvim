@@ -139,9 +139,6 @@ vim.opt.cursorline = true
 -- Use block cursor in insert mode
 vim.opt.guicursor = ''
 
--- Enable smart indentation
-vim.opt.smartindent = true
-
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
@@ -602,7 +599,7 @@ require('lazy').setup({
       notify_on_error = false,
       format_on_save = {
         timeout_ms = 500,
-        lsp_fallback = true,
+        lsp_fallback = false,
       },
       formatters_by_ft = {
         lua = { 'stylua' },
